@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Management System</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+            <a class="navbar-brand" href="#">School Management System</a>
+
+            <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" align="right" id="collapsibleNavbar" >
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/teachers}">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <br>
+        <br>
+        <div class  = "container">
+            <div class = "row">
+                <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                    <h1 class="text-center"> Update Teacher Details</h1>
+                    <div class="card-body">
+                        <form th:action="@{/teachers/{id} (id=${teacher.id})}" th:object="${teacher}" method="POST">
+                            
+                            <div class="from-group">
+                                <label> Teacher First Name </label>
+                                <input
+                                    type="text"
+                                    name="first_name"
+                                    th:field="*{first_name}"
+                                    class="form-control"
+                                    placeholder="Enter Teacher First Name"
+                                    />
+                            </div>
+                            
+                            <div class="from-group">
+                                <label> Teacher Last Name </label>
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    th:field="*{last_name}"
+                                    class="form-control"
+                                    placeholder="Enter Teacher Last Name"
+                                    />
+                            </div>
+                            
+                            <div class="from-group">
+                                <label> Teacher Age </label>
+                                <input
+                                    type="text"
+                                    name="age"
+                                    th:field="*{age}"
+                                    class="form-control"
+                                    placeholder="Enter Teacher Age"
+                                    />
+                            </div>
+                            
+                            <div class="from-group">
+                                <label> Teacher Contact No </label>
+                                <input
+                                    type="text"
+                                    name="telephone_no"
+                                    th:field="*{telephone_no}"
+                                    class="form-control"
+                                    placeholder="Enter Teacher Contact No"
+                                    />
+                            </div>
+                            
+                            <div class="from-group">
+                                <label> Teacher Email </label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    th:field="*{email}"
+                                    class="form-control"
+                                    placeholder="Enter Teacher Email"
+                                    />
+                            </div>
+                            <br>
+                            <div class="box-footer"  align="center">
+                                <button type="submit" class="btn btn-primary">
+                                    Update
+                                </button>
+                                
+                                <button type="reset" class="btn btn-secondary">
+                                    Clear
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
